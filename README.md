@@ -118,10 +118,7 @@ Models:
 
 ## Model performance
 The XGBoost Regressor model outperformed the other approaches on the test and validation set. 
-*	Linear Regression : RMSE = 7406.97
-*	Decision Tree Regressor : RMSE = 8411.68
-*	Random Forest Regressor : RMSE = 6508.09
-*	XGBoost Regressor : RMSE = 	6370.08
+
 
 |    | Model               | RMSE |
 |----|--------------------|---------|
