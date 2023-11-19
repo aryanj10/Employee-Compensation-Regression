@@ -96,3 +96,38 @@ Dataset Shape: (287836, 15)
 
 
 
+![alt text](https://github.com/aryanj10/Employee-Compensation-Regression/blob/master/correlation.png "Correlation Matrix")
+![alt text](https://github.com/aryanj10/Employee-Compensation-Regression/blob/master/compensation_by_JF.png "Compensation by Job Family")
+
+## Data Pre-Processing
+1. Dropped the columns Union, Dept & OG since the columns UC, DC & OGC already encode their values.
+2. Removed the 'Job' column due to its extensive range of values. Utilizing the 'Job Family' column effectively groups and encapsulates these values, streamlining the dataset and minimizing redundancy for clearer representation.
+3. Considering the vast number of categories in the JF, UC & DC columns, a streamlined approach was adopted. The top 10 most frequent values were selected, while the remaining categories were dropped. One-hot encoding was then applied solely to these top 10 values. This strategy significantly reduced dimensionality while retaining crucial categorical information for analysis and modeling.
+4.  Implemented the Standard Scaler on the numerical columns.
+
+## Model Building
+Split the data into train and tests sets with a test size of 20%.  
+
+I tried four different models and evaluated them using Root Mean Squared Error. I choose RMSE because it provides a measure of the model's prediction accuracy in the same units as the target variable & also it is sensitive to outliers.  
+
+Models:
+*	Linear Regression
+*	Decision Tree Regressor
+*	Random Forest Regressor
+*	XGBoost Regressor
+
+## Model performance
+The XGBoost Regressor model outperformed the other approaches on the test and validation set. 
+*	Linear Regression : RMSE = 7406.97
+*	Decision Tree Regressor : RMSE = 8411.68
+*	Random Forest Regressor : RMSE = 6508.09
+*	XGBoost Regressor : RMSE = 	6370.08
+
+|    | Model               | RMSE |
+|----|--------------------|---------|
+| 0  | XGBoost Regressor  | 6370.08   |
+| 1  | Random Forest Regressor                | 6508.09   |
+| 2  | Linear Regression                 | 7406.97  |
+| 3  | Decision Tree Regressor                 | 8411.68  |
+
+
